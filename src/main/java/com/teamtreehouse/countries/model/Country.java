@@ -28,6 +28,10 @@ public class Country {
         return populationString;
     }
 
+    public int getPopulationInt() {
+        return population;
+    }
+
 
     public String getCapital() {
         return capital;

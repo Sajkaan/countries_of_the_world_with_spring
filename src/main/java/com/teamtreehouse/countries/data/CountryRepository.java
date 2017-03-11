@@ -18,7 +18,7 @@ public class CountryRepository {
             new Country("Kenya", 46661552, "Nairobi", Arrays.asList("English", "Kiswahili"))
     );
 
-    public static List<Country> getAllCountries() {
+    public List<Country> getAllCountries() {
         return ALL_COUNTRIES;
     }
 
@@ -39,7 +39,7 @@ public class CountryRepository {
 
     public List<Country> getByPopulation() {
         return ALL_COUNTRIES.stream()
-                .sorted((c1, c2) -> c1.getPopulation().compareTo(c2.getPopulation()))
+                .sorted((c1, c2) -> c2.getPopulationInt() - (c1.getPopulationInt()))
                 .collect(Collectors.toList());
     }
 
